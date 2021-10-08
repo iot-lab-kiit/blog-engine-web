@@ -77,7 +77,6 @@ greater end-user participation. We currently have a number of successful goods a
 ## Deployed Version
 https://blog-frontend-iot.herokuapp.com/
 
-[Back to Start](#title)
 
 <a name="license"></a>
 ## LICENSE
