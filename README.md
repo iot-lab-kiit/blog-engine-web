@@ -53,7 +53,7 @@ greater end-user participation. We currently have a number of successful goods a
 
 <a name="preview"></a>
 ## Website Preview
-
+![image](https://user-images.githubusercontent.com/73037598/136614877-e7d6a29a-5d14-40a6-b150-b062fcdd12ce.png)
 
 <a name="contents"></a>
 ## Table of Contents
