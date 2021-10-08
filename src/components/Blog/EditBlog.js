@@ -1,9 +1,9 @@
-import React,{useState} from 'react'
+import React, { useState } from "react";
 import swal from "sweetalert";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-import "./blog.css"
+import "./blog.css";
 
 export default function EditBlog() {
   //onchange function for title, image, content
@@ -32,7 +32,7 @@ export default function EditBlog() {
         },
       });
       axios
-        .put("https://myways-backend.herokuapp.com/api/blog", {
+        .put("https://blog-backend-iot.herokuapp.com/api/blog", {
           title: title,
           image: image,
           content: content,
@@ -57,62 +57,58 @@ export default function EditBlog() {
         });
     }
   };
-  const onDelete =(e)=>{
-      e.preventDefault();
-      if (!title) {
-        swal({
-          title: "Please fill the title of the blog",
-          text: "",
-          icon: "warning",
-          buttons: {
-            confirm: { text: "Okay", className: "sweet-warning" },
-          },
-        });
-      } else {
-        swal({
-          title: "Your Blog has been updated!",
-          text: "",
-          icon: "success",
-          buttons: {
-            confirm: { text: "Okay", className: "sweet-warning" },
-          },
-        });
-        axios
-          .delete("https://myways-backend.herokuapp.com/api/deleteblog", {
-            title: title
-          })
-          .then((response) => {
-            console.log(response.data);
-            if (response.data) {
-              //redirect to login page
-              history.push("/");
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-            swal({
-              title: "Update Failed",
-              text: "",
-              icon: "error",
-              buttons: {
-                confirm: { text: "Okay", className: "sweet-warning" },
-              },
-            });
+  const onDelete = (e) => {
+    e.preventDefault();
+    if (!title) {
+      swal({
+        title: "Please fill the title of the blog",
+        text: "",
+        icon: "warning",
+        buttons: {
+          confirm: { text: "Okay", className: "sweet-warning" },
+        },
+      });
+    } else {
+      swal({
+        title: "Your Blog has been updated!",
+        text: "",
+        icon: "success",
+        buttons: {
+          confirm: { text: "Okay", className: "sweet-warning" },
+        },
+      });
+      axios
+        .delete("https://blog-backend-iot.herokuapp.com/api/deleteblog", {
+          title: title,
+        })
+        .then((response) => {
+          console.log(response.data);
+          if (response.data) {
+            //redirect to login page
+            history.push("/");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          swal({
+            title: "Update Failed",
+            text: "",
+            icon: "error",
+            buttons: {
+              confirm: { text: "Okay", className: "sweet-warning" },
+            },
           });
-      }
-
-  }
+        });
+    }
+  };
   return (
     <div className="edit-blog">
       <div className="form">
         <p className="text-center">
           Please Type the full title of the blog for updation
         </p>
-        <form style={{"marginTop":"1.5rem"}}>
-          <label
-            for="title"
-            className="texts"
-          >
+        <form style={{ marginTop: "1.5rem" }}>
+          <label for="title" className="texts">
             Title
           </label>
           <input
@@ -125,10 +121,7 @@ export default function EditBlog() {
             className="input"
             required
           />
-          <label
-            for="Image"
-            className="texts"
-          >
+          <label for="Image" className="texts">
             Image
           </label>
           <input
@@ -141,10 +134,7 @@ export default function EditBlog() {
             onChange={(e) => setImage(e.target.value)}
             required
           />
-          <label
-            for="Blog"
-            className="texts"
-          >
+          <label for="Blog" className="texts">
             Blog Content
           </label>
           <textarea
@@ -159,20 +149,12 @@ export default function EditBlog() {
           />
           <div className="flex flex-wrap justify-evenly">
             <div>
-              <button
-                type="submit"
-                onClick={onSubmit}
-                className="buttons1"
-              >
+              <button type="submit" onClick={onSubmit} className="buttons1">
                 Update
               </button>
             </div>
             <div>
-              <button
-                type="submit"
-                onClick={onDelete}
-                className="buttons2"
-              >
+              <button type="submit" onClick={onDelete} className="buttons2">
                 Delete
               </button>
             </div>

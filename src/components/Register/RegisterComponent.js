@@ -31,7 +31,7 @@ export default function Register() {
 		} else {
 			//if password and confirm password is same then call the register function
 			axios
-				.post("https://myways-backend.herokuapp.com/api/register", {
+				.post("https://blog-backend-iot.herokuapp.com/api/register", {
 					email: email,
 					password: password,
 					confirmpassword: confirmpassword,

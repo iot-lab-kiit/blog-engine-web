@@ -6,23 +6,22 @@ import "./Login.css";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const HandleSubmit=(e)=>{
+  const HandleSubmit = (e) => {
     e.preventDefault();
-      axios
-        .post("https://myways-backend.herokuapp.com/api/signin", {
-          email: email,
-          password: password,
-        })
-        .then((response) => {
-          // console.log(response.data);
-          if (response.data) {
-            //redirect to login page
-            localStorage.setItem("userData", JSON.stringify(response.data));
-            window.location.href="/";
-          }
-        });
-        
-    }
+    axios
+      .post("https://blog-backend-iot.herokuapp.com/api/signin", {
+        email: email,
+        password: password,
+      })
+      .then((response) => {
+        // console.log(response.data);
+        if (response.data) {
+          //redirect to login page
+          localStorage.setItem("userData", JSON.stringify(response.data));
+          window.location.href = "/";
+        }
+      });
+  };
   return (
     <div className="Login-container">
       <div className="Login-subContainer">
