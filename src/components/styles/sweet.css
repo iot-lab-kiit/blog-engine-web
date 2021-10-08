@@ -1,0 +1,7 @@
+.sweet-warning{
+  background-color: #505255;
+ }
+ 
+ .sweet-warning:not([disabled]):hover{
+   background-color: #ffc222;
+ }
