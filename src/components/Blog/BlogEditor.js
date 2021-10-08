@@ -30,7 +30,7 @@ export default function BlogEditor() {
         },
       });
       axios
-        .post("https://myways-backend.herokuapp.com/api/createBlog", {
+        .post("https://blog-backend-iot.herokuapp.com/api/createBlog", {
           title: title,
           image: image,
           content: content,
@@ -59,10 +59,7 @@ export default function BlogEditor() {
     <div className="edit-blog">
       <div className="form">
         <form className="mt-6">
-          <label
-            for="title"
-            className="title"
-          >
+          <label for="title" className="title">
             Title
           </label>
           <input
@@ -75,10 +72,7 @@ export default function BlogEditor() {
             className="input"
             required
           />
-          <label
-            for="Image"
-            className="title"
-          >
+          <label for="Image" className="title">
             Image
           </label>
           <input
@@ -91,10 +85,7 @@ export default function BlogEditor() {
             onChange={(e) => setImage(e.target.value)}
             required
           />
-          <label
-            for="Blog"
-            className="texts"
-          >
+          <label for="Blog" className="texts">
             Blog Content
           </label>
           <textarea
@@ -107,11 +98,7 @@ export default function BlogEditor() {
             className="text-area"
             required
           />
-          <button
-            type="submit"
-            onClick={onSubmit}
-            className="buttons1"
-          >
+          <button type="submit" onClick={onSubmit} className="buttons1">
             Publish
           </button>
         </form>
