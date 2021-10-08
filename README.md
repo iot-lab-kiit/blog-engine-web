@@ -60,7 +60,7 @@ greater end-user participation. We currently have a number of successful goods a
 
 <a name="preview"></a>
 ## Website Preview
-https://blog-frontend-iot.herokuapp.com/
+
 
 <a name="contents"></a>
 ## Table of Contents
@@ -75,7 +75,7 @@ https://blog-frontend-iot.herokuapp.com/
 
 <a name="play"></a>
 ## Deployed Version
-
+https://blog-frontend-iot.herokuapp.com/
 
 [Back to Start](#title)
 
