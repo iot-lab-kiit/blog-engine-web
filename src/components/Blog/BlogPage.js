@@ -63,11 +63,6 @@ export default function BlogPage() {
                 ({likesCount}) Like 👍
               </button>
             </div>
-            <div>
-              <button onClick={HandleComment} className="bg-transparent mx-4 mt-4 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                Comment
-              </button>
-            </div>
           </div>
           <textarea
             id="comment"
@@ -79,6 +74,11 @@ export default function BlogPage() {
             className="block resize-none border-2 w-1/2 h-40 p-3 mt-2 text-gray-900  appearance-none focus:outline-none focus:bg-gray-100 focus:shadow-inner"
             required
           />
+          <div>
+              <button onClick={HandleComment} className="bg-transparent mx-4 mt-4 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                Comment
+              </button>
+            </div>
         </div>
       </section>
       <div className="bg-gray-500 px-4 py-5 border-b rounded-t sm:px-6">
