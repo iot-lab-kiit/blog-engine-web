@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductComponent from "./ProductComponent";
 import axios from "axios";
 
-import "./blog.css"
+import "./blog.css";
 
 function Bloglist() {
   //axios to get the Blog
@@ -22,9 +22,7 @@ function Bloglist() {
   return (
     <div>
       <div>
-        <h1 className="our-blogs">
-          Our blogs
-        </h1>
+        <h1 className="our-blogs text-white">Our blogs</h1>
         <div className="blogs">
           {blogList.map((blog) => (
             <ProductComponent key={blog._id} product={blog} />
