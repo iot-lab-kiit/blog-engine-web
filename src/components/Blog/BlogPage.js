@@ -21,20 +21,18 @@ export default function BlogPage() {
       });
   }, [blogList, id]);
 
-  const HandleComment=()=>{
-      setComment("");
-            axios.put(
-              `https://myways-backend.herokuapp.com/api/blog/comment/${id}`,
-              {comment:comment }
-            );
-            
-  }
+  const HandleComment = () => {
+    setComment("");
+    axios.put(`https://myways-backend.herokuapp.com/api/blog/comment/${id}`, {
+      comment: comment,
+    });
+  };
   return (
     <div>
       <section className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-col px-5 py-16 justify-center items-center">
           <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
-            <h1 className="title-font sm:text-4xl text-3xl mb-10 font-medium text-gray-900">
+            <h1 className="title-font sm:text-4xl text-3xl mb-10 font-medium text-gray-100">
               {blogList.title}
             </h1>
             <img
@@ -43,7 +41,9 @@ export default function BlogPage() {
               src={blogList.image}
             />
 
-            <p className="mb-8 mt-10 leading-relaxed">{blogList.content}</p>
+            <p className="mb-8 mt-10 leading-relaxed text-white">
+              {blogList.content}
+            </p>
           </div>
           <div className="flex flex-wrap justify-evenly">
             <div>
@@ -70,15 +70,18 @@ export default function BlogPage() {
             name="comment"
             placeholder="Enter your comment"
             autocomplete="new-Image"
-            onChange={(e) =>setComment(e.target.value)}
+            onChange={(e) => setComment(e.target.value)}
             className="block resize-none border-2 w-1/2 h-40 p-3 mt-2 text-gray-900  appearance-none focus:outline-none focus:bg-gray-100 focus:shadow-inner"
             required
           />
           <div>
-              <button onClick={HandleComment} className="bg-transparent mx-4 mt-4 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                Comment
-              </button>
-            </div>
+            <button
+              onClick={HandleComment}
+              className="bg-transparent mx-4 mt-4 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+            >
+              Comment
+            </button>
+          </div>
         </div>
       </section>
       <div className="bg-gray-500 px-4 py-5 border-b rounded-t sm:px-6">
